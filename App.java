@@ -10,20 +10,23 @@ public class App {
         Scanner scanner = new Scanner(System.in);
       
       String start = scanner.nextLine();
-      String answer1 = "yes";
-      String answer2 = "Yes";
-      while (!start.equals(answer1) || !start.equals(answer2))
+      
+      while (!start.equals("yes") || !start.equals("Yes"))
       {
-        if (!start.equals(answer1) || !start.equals(answer2))
+        if (!start.equals("yes") || !start.equals("Yes"))
         {
           start = scanner.nextLine();
           System.out.println("Sorry I didn't quite get that.");
           //start = scanner.nextLine();
           
         }
-
+        if (start.equals("yes") || start.equals("Yes"))
+        {
+          System.out.println("Alright lets start!");
+          break;
         }
-        System.out.println("Alright");
+        }
+        
       
       }
 }
