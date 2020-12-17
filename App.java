@@ -29,6 +29,26 @@ public class App {
         
       
       }
+    public static void addScore()
+    {
+      //Get randomNumber
+      //randomNumber += userScore
+      //return userScore
+
+    }
+    public static void drawOrHold()
+    {
+      //if draw, ask how many to draw
+      //if hold, stop game
+
+    }
+    public static void checkScore()
+    {
+      //if userScore > 21 "you lost"
+      //if userScore <= 21, use drawOrHold()
+
+    }
+
 }
 
 
