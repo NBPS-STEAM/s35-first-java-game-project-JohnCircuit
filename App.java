@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Random;
 public class App {
     public static void main(String[] args) {
       //Scanner scanner = new Scanner(System.in);
@@ -12,19 +12,22 @@ public class App {
         Scanner scanner = new Scanner(System.in);
       
       String start = scanner.nextLine();
-      
-      while (start.equals("yes") || start.equals("Yes"))
+      System.out.println("");
+      System.out.println("");
+      while (start.equalsIgnoreCase("yes"))
       {
-        if (!start.equals("yes") || !start.equals("Yes"))
+        if (!start.equalsIgnoreCase("yes"))
         {
           //start = scanner.nextLine();
           System.out.println("Sorry I didn't quite get that.");
+          System.out.println("");
           start = scanner.nextLine();
           
         }
         if (start.equals("yes") || start.equals("Yes"))
         {
           System.out.println("Alright lets start!");
+          System.out.println("");
           break;
         }
       } 
@@ -32,28 +35,36 @@ public class App {
       
       }
     public static void addScore()
-    {
+    { 
       //Get randomNumber
       //randomNumber += userScore
       //return userScore
-
+      Random card = new Random();
+      
+      int score;
+      score = 1+card.nextInt(11);
+      System.out.println(score);
+      
+      
+      
     }
     public static void drawOrHold()
     {
       Scanner scanner = new Scanner(System.in);
       System.out.println("How many times would you like to draw?");
       int draw = scanner.nextInt();
+      System.out.println("");
+      System.out.println("");
 
-      if (draw <= 0)
-      {
-        //break;
-      }
-      else if (draw >= 1)
+      
+      if (draw >= 1)
       {
         for(int i = 1; i <= draw; i++)
     	{
-		    System.out.println("Hello Karel");
+        addScore();
+		    
     	}
+      
       }
       //if draw, ask how many to draw
       //if hold, stop game
