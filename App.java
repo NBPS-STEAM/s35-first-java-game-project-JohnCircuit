@@ -6,14 +6,16 @@ public class App {
   static int sum;
     public static void main(String[] args) {
       //Scanner scanner = new Scanner(System.in);
-      System.out.println("It looks like you want to be dealt in, is that true?");
-      intro();
-      drawOrHold();
+      
+      game();
+      
     }
 
 
-      public static void intro()
+      public static void game()
       {
+        System.out.println("It looks like you want to be dealt in, is that true?");
+
         Scanner scanner = new Scanner(System.in);
       
       String start = scanner.nextLine();
@@ -23,7 +25,7 @@ public class App {
       {
         if (!start.equalsIgnoreCase("yes"))
         {
-          //start = scanner.nextLine();
+          
           System.out.println("Sorry I didn't quite get that.");
           System.out.println("");
           start = scanner.nextLine();
@@ -34,61 +36,72 @@ public class App {
           System.out.println("Alright lets start!");
           System.out.println("");
           break;
-        }
+        } 
+        
       } 
         
-      
-    }
-    public static int addScore()
-    { 
-      //Get randomNumber
-      //randomNumber += userScore
-      //return userScore
-      Random card = new Random();
-      App hand = new App();
-      
-      int score;
-      score = 1+card.nextInt(11);
-      System.out.println(score);
-      App.hand = score;
-      return App.hand;
-      
-      
-    }
+        drawOrHold();
+
+      }
 
 
-
-    public static int drawOrHold()
+    public static void drawOrHold()
     {
       Scanner scanner = new Scanner(System.in);
       System.out.println("How many times would you like to draw?");
       int draw = scanner.nextInt();
       System.out.println("");
       System.out.println("");
-
+      int hand = 0;
       
       if (draw >= 1)
       {
         for(int i = 1; i <= draw; i++)
     	{
-        addScore();
-        int sum = sum + App.hand;
-		    //System.out.println(App.hand);
+        Random card = new Random();
+		    int score;
+        score = 1+card.nextInt(11);
+        System.out.println(score);
+        
+        hand = hand + score;
+        
     	}
-      //System.out.println(App.hand);
-      return App.hand();
-      System.out.println(sum);
+        System.out.println(hand);
+        if (hand < 20)
+        {
+          System.out.println("It looks like the house had a hand of 20 or more. You lose."); 
+          System.out.println("");
+          System.out.println("");
+        }
+        else if (hand > 21)
+        {
+          System.out.println("WOW it looks like your hand is to large, you busted! You lose."); 
+          System.out.println("");
+          System.out.println("");
+        }
+        else 
+        {
+          System.out.println("Congratulations you beat the dealer! You win."); 
+          System.out.println("");
+          System.out.println("");
+        }
+
       }
-      //if draw, ask how many to draw
-      //if hold, stop game
+      
+      System.out.println("Now that you know what the game is like, how many times would you like to play again?"); 
 
+      int rerun = scanner.nextInt();
+      int i = 1;
+      while (i < rerun)
+      {
+          i++;
+          game();
+          
+      }
+      
     }
-    public static void checkScore()
-    {
-      //if userScore > 21 "you lost"
-      //if userScore <= 21, use drawOrHold()
+    
 
-    }
 
 }
 
