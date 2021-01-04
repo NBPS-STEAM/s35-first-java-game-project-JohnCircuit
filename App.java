@@ -7,14 +7,7 @@ public class App {
     public static void main(String[] args) {
       //Scanner scanner = new Scanner(System.in);
       
-      game();
-      
-    }
-
-
-      public static void game()
-      {
-        System.out.println("It looks like you want to be dealt in, is that true?");
+      System.out.println("It looks like you want to be dealt in, is that true?");
 
         Scanner scanner = new Scanner(System.in);
       
@@ -37,12 +30,22 @@ public class App {
           System.out.println("");
           break;
         } 
-        
-      } 
-        
-        drawOrHold();
-
       }
+
+      drawOrHold();
+      
+      System.out.println("Now that you know what the game is like, how many times would you like to play again?"); 
+
+      int rerun = scanner.nextInt();
+      int i = 0;
+      while (i < rerun)
+      {
+          i++;
+          drawOrHold();
+          
+      }
+
+    }
 
 
     public static void drawOrHold()
@@ -88,16 +91,7 @@ public class App {
 
       }
       
-      System.out.println("Now that you know what the game is like, how many times would you like to play again?"); 
-
-      int rerun = scanner.nextInt();
-      int i = 1;
-      while (i < rerun)
-      {
-          i++;
-          game();
-          
-      }
+      
       
     }
     
